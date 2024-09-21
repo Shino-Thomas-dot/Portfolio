@@ -1,0 +1,349 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    background-color: rgb(0, 0, 0);
+     overflow-x: hidden;
+}
+
+header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001; /*layering */
+     position: sticky; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+}
+
+.logo {
+    position: relative; /*essential for making the position absolute*/
+}
+
+.logo-Original {
+    font-size: 1.5rem;
+}
+
+.logo-change {
+    /*css mein we dont have gradient colors
+     for text aise krne se hoga this is basically masking */
+    background-image: linear-gradient(45deg, #00f5d4, #889ffb, #2c609f); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;  
+    font-size: 1.5rem;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    transform: translateY(-50%); /*kaha se aana chaiye*/
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.4s ease;
+}
+
+.logo-Original, .menu-icon {
+    color: white;
+    display: inline-block; /*ek hi line pe chaiye na*/
+}
+
+.logo:hover .logo-Original {
+    transform: translateY(50%);
+    opacity: 0;
+}
+
+.logo:hover .logo-change {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.menu-icon {
+    margin-left: auto;
+   cursor: pointer; /*  hover krte vakt to depict ki its button */
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-end; 
+}
+
+.menu-icon span {
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 0.1rem;
+    background-color: white;
+    margin: 0.1rem 0;
+}
+/* added a imp keyword to overwrite the previous styling */
+.span2 {
+    width: 2.5rem !important; 
+}
+
+.span3 {
+    width: 1.5rem !important;
+}
+
+@media (min-width: 600px) {
+    header {
+        padding: 2rem 3rem; 
+    }
+
+    .logo-Original, .logo-change {
+        font-size: 2rem; 
+    }
+
+    .menu-icon span {
+        width: 3rem; 
+        height: 0.5rem; 
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        padding: 1rem 2.5rem; 
+    }
+
+    .logo-Original, .logo-change {
+        font-size: 2rem; 
+    }
+}
+
+.navbar {
+    position: fixed; 
+    top: 0;
+    right: -50%; /* Start hidden to the right */
+    width: 35%;
+    height: 100%; 
+    /* direct opacity nai lag sakte cuz it will reduce the opacity of the whole navbar */
+    background-image:linear-gradient(135deg, rgba(0, 31, 63, 0.2), rgba(75, 0, 130, 0.2)); 
+    color: white;
+    padding: 2rem;
+    
+    transition: right .8s ease; 
+    z-index: 1000; 
+}
+
+.navbar.active {
+    right: 0; /* Slide in ke liye */
+}
+
+.navbar li, a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.navbar a:hover {
+    background-image: linear-gradient(45deg, #00f5d4, #889ffb, #2c609f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@media (min-width: 600px) {
+    .navbar a {
+        font-size: 2rem; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar a {
+        font-size: 2.5rem; 
+    }
+}
+
+/* Overlay styles */
+.overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(.2rem); /* Apply blur only to the overlay */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease; 
+    z-index: 999; /* Lower z-index than header and navbar */
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto; 
+}
+
+.greeting-text {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; 
+    z-index: 998; /* Below header and navbar */
+    transition: opacity 0.1s ease;
+   font-size: 3rem;
+    font-weight: lighter;
+    color: white;
+   
+}
+
+@media (max-width: 1024px) {
+    .greeting-text {
+        font-size: 4rem; /* Adjusted size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .greeting-text {
+        font-size: 3rem; /* Smaller size for tablets */
+    }
+}
+
+/* to fade out krne ke liye when scrolled  */
+.greeting-text.fade-out {
+    opacity: 0;
+}
+
+.creativity-text {
+    font-family: 'Dancing Script', 'Courier New', Courier, monospace;
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+    font-size: 5.5rem;
+}
+
+.code-text {
+    font-family: 'Courier New', Courier, monospace;
+    background-image: linear-gradient(45deg, #00f5d4, #889ffb, #2c609f);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+    font-size: 5.5rem;
+    animation: changeColor 3s infinite;
+}
+
+
+/* keyframe color chnage krne ke liye */
+@keyframes changeColor {
+    0% {
+        background-image: linear-gradient(45deg, #00f5d4, #889ffb, #2c609f);
+    }
+
+    50% {
+        background-image: linear-gradient(90deg, #0034d2, #00f5d4, #889ffb);
+    }
+
+    100% {
+        background-image: linear-gradient(45deg, #00f5d4, #ce77d4, #00f5d4);
+    }
+}
+.portfolio {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    align-items: left; /* Center elements */
+    margin-top: 1.2rem;
+
+}
+.portfolio-image {
+    max-width: 100%;
+    transform: translateY(10%);
+    height: auto;
+    margin: 2rem;
+
+    border-radius: 5%;
+    opacity: 0;
+    transition: opacity .8s ease, transform .8s ease; /* Sync the timings */
+}
+.portfolio-image.expand {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.greeting-text {
+    opacity: 1; /* Ensure default opacity is 1 */
+    transition: opacity .5s ease;
+}
+
+.greeting-text.fade-out {
+    opacity: 0;
+}
+
+
+
+/* About Me section */
+.about-me {
+    opacity: 0;
+    transform: translateY(10%);
+    
+    color: rgb(88, 88, 88);
+    text-align: left; /* Left align text */
+    transition: opacity .8s ease , transform .8s ease; /* Smooth appearance */
+    font-weight: lighter;
+    margin:1.5rem;
+}
+.about-me p{
+    margin-top: 0;
+    
+    
+}
+
+
+.about-text-style {
+    font-weight: 300;
+    font-size: 3rem;
+    color: white ;
+  
+}
+
+.about-me.visible {
+    transform: translateY(0);
+    opacity: 1;
+    animation: aboutColor .5s forwards ;
+    animation-delay: 1s;
+}
+@keyframes aboutColor{
+    0%{
+        color:rgb(88, 88, 88);
+    }
+    100%{
+        color:white;
+    }
+}
+
+.about-wrap {
+    display: flex; /* Enable flexbox for About Me section */
+    flex-direction: column; /* Stack on smaller screens */
+    color: white;
+    margin: 1.5rem;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .portfolio {
+        flex-direction: row; /* Side by side on larger screens */
+        /* Space between image and text */
+        align-items: center; /* Align vertically */
+        max-width: 100%;
+    }
+    .portfolio-image{
+    margin: 1rem;
+    }
+    .about-me{
+        font-size: 1.5rem;
+        margin:0; 
+    }
+
+    .about-wrap {
+        flex-direction: column; /* Keep column for text */
+        max-width: 60%; /* Limit width of text */
+        /* margin-left: 2rem; Space between image and text */
+    }
+
+    .portfolio-image {
+        max-width: 37%; /* Adjust the width of the image */
+    }
+}
