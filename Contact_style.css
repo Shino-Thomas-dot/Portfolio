@@ -1,0 +1,46 @@
+body{
+    font-family: Poppins,Arial, Helvetica, sans-serif;
+    color: white;
+    background-color:black ;
+    background-image: url(formbg.gif);
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+}
+.heading{
+    font-weight: lighter;
+   text-align:center ;
+}
+.talent{
+    font-family: 'Dancing Script', 'Courier New', Courier, monospace;
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 5rem;
+}
+.meeting{
+    
+    font-weight: lighter;
+    background-image: linear-gradient(45deg, #00f5d4, #889ffb, #2c609f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+}
+.container{
+    width: 80%;
+    height: 100vh;
+    border-radius: 3rem;
+    background-color: rgba(65, 63, 63, 0.2);
+    backdrop-filter: blur(10rem);
+    margin-bottom: 2rem;
+}
+button{
+    border: none!important;
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+
+}
+button:hover{
+    background-image: linear-gradient(45deg, #00f5d4, #889ffb, #2c609f);
+}

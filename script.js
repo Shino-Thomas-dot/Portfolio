@@ -30,3 +30,18 @@ const about=document.querySelector('.about-me');
         greet.classList.remove('fade-out');
     }
 });
+window.addEventListener('load',function(){
+const loader= document.getElementById('pre-loader');
+const loader_line=document.getElementById('loader-circle');
+const content=document.getElementById('content');
+
+setTimeout(() => {
+   
+    loader.style.display= 'none';
+       
+    // Animate the white background upward
+    content.style.display = 'block'; // Show the content
+    document.body.classList.add('loaded'); // Allow scrolling
+}, 2000); // Adjust timing to match loader duration
+});
+
