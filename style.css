@@ -354,19 +354,21 @@ a {
     transform: translateY(10%);
 
     color: rgb(88, 88, 88);
-    text-align: left;
+    text-align:center;
+    
     /* Left align text */
     transition: opacity .8s ease, transform .8s ease;
     /* Smooth appearance */
     font-weight: 300;
     margin: 1.5rem;
     font-size: 1.5rem
+    
    
 }
 
 .about-me p {
     margin-top: 0;
-
+  
 
 }
 
@@ -423,6 +425,7 @@ a {
         font-weight: lighter;
         font-size: 1.5rem;
         margin: 0;
+        text-align: left;
     }
 
     .about-wrap {
@@ -437,4 +440,89 @@ a {
         max-width: 37%;
         /* Adjust the width of the image */
     }
+}
+.learn-more-link{
+    background-image: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-weight:light;
+}
+.learn-more-link:hover{
+  
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+@media (min-width: 768px) {
+    .learn-more-link{
+        text-align: left;
+        font-size: 1.5rem;
+    }
+}
+/* Footer Section */
+.footer-section {
+    border-top: 1px solid grey; /* Create space for gradient */
+    
+    padding: 20px;
+    margin-top: 10rem;
+    text-align: center;
+}
+
+/* Footer Content */
+.footer-content {
+    max-width: 600px;
+    margin: auto;
+    color: #ffffff;
+}
+
+/* Talent Question */
+.talent-question {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
+
+/* Email Link */
+.email {
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 2.1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.email:hover {
+    color: #00c3ff; /* Change color on hover */
+}
+
+/* Footer Buttons */
+.footer-buttons {
+    margin-top: 15px;
+}
+
+.footer-button {
+    padding: 10px 12px;
+    background-color: #ffffff; /* Button color */
+    color: #000000; /* Text color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.8s, color .8s;
+}
+
+.footer-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.footer-button:hover {
+    background-image: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff); /* Change button color on hover */
+    color: #ffffff; /* Change text color on hover */
 }

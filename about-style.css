@@ -1,0 +1,194 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    font-size: 2.5rem; /* Base font size for mobile */
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+    padding: 10px 0;
+}
+
+.timeline-item {
+    background-color: rgba(255, 255, 255); /* White background for each item */
+    border-radius: 8px;
+    padding: 20px;
+    backdrop-filter: blur(.5rem);
+    display: flex;
+    flex-direction: column; /* Stack text and image */
+    align-items: center; /* Center content */
+}
+
+.timeline-image {
+    width: 100%;
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 8px;
+    transition: filter 2s ease;
+    filter: grayscale(100%);
+}
+
+.timeline-content {
+    text-align: center; /* Center text inside items */
+}
+
+h2 {
+    display: inline-block; /* Prevents line breaking */
+    background-image: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: light;
+    font-size: 1.8rem; /* Increase font size for h2 */
+}
+
+.period {
+    color: rgb(160, 156, 156);
+    font-weight: light;
+    font-size: 1.2rem; /* Increase size for period */
+}
+
+/* Scroll effect for paragraph text */
+p {
+    color: rgb(215, 213, 213);
+    transition: color 5s ease;
+    margin-top: 0;
+}
+
+p.scrolled {
+    color: rgb(0, 0, 0); /* Change color to white on scroll */
+}
+
+.timeline-image.greyscale {
+    filter: grayscale(0%); /* Apply greyscale filter */
+}
+
+.stream {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+/* Volunteer Section Styles */
+.volunteer-section {
+    padding: 5vw 3vw; /* Use viewport width for padding */
+    overflow: hidden; /* Hide any overflowing content */
+    position: relative; /* To position the animated container */
+}
+
+
+.volunteer-timeline {
+    display: flex;
+    animation: slide-left 8s linear infinite; /* Adjusted duration for smoother animation */
+    gap: 4vw; 
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slide-left {
+    0% {
+        transform: translateX(0); /* Start at original position */
+    }
+    25% {
+        transform: translateX(-100%); /* Move left to show the first set of logos */
+    }
+    75% {
+        transform: translateX(-100%); /* Keep them off-screen */
+    }
+    100% {
+        transform: translateX(-200%); /* Move left again to show the second set */
+    }
+}
+
+
+/* Individual volunteer items */
+.volunteer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 80%; /* Increase item width on mobile */
+    white-space: nowrap; /* Prevent text from wrapping */
+    margin: 0 1vw; /* Adjust margin for spacing */
+}
+
+
+
+.volunteer-logo {
+    width: 10vw; /* Increased logo size for all devices */
+    height: auto;
+    margin-bottom: 1rem; /* Use rem for margin */
+}
+
+.volunteer-content h2 {
+    font-size: 1.5rem; /* Use rem for title size */
+    margin: 1rem 0 0.5rem; /* Use rem for margin */
+}
+
+.volunteer-content p {
+    font-size: 1.2rem; /* Use rem for organization name size */
+    margin: 0;
+}
+
+.period {
+    font-size: 1rem; /* Use rem for period size */
+    color: grey;
+    margin-top: 0.5rem; /* Use rem for margin */
+}
+
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+    .volunteer-timeline {
+        gap: 3vw; /* Reduced gap for larger screens */
+        animation: slide-left 10s linear infinite; /* Slow down animation */
+    }
+
+    .volunteer-item {
+        min-width: 40vw; /* Adjust item width on larger screens */
+    }
+
+    .volunteer-logo {
+        width: 12vw; /* Adjust logo size for larger screens */
+    }
+
+    .volunteer-content h2 {
+        font-size: 1.8rem; /* Adjust title size */
+    }
+
+    .volunteer-content p {
+        font-size: 1.5rem; /* Adjust organization name size */
+    }
+
+    .period {
+        font-size: 1.3rem; /* Adjust period size */
+    }
+}
+
+.volunteer-section h2 {
+
+    background-image: linear-gradient(45deg, #97e5bd, #ffa500, #ffff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: lighter;
+}
+
+.volunteer-content p {
+    color: white !important;
+}

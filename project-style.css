@@ -1,0 +1,130 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Container for Projects */
+.projects-section {
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Projects Background */
+.projects-background {
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Padding around the projects */
+    border-radius: 12px; /* Curved borders */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Heading Styles */
+.projects-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    font-size: 2.5rem; /* Base font size for mobile */
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column by default (mobile) */
+    gap: 20px; /* Space between grid items */
+    padding: 10px 0;
+}
+
+/* Individual Project Items */
+.project-item {
+    background-color: #ffffff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding around content */
+    display: flex;
+    flex-direction: column; /* Stack text and image */
+    align-items: center; /* Center content */
+    cursor: pointer; /* Indicate clickable items */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+}
+
+/* Project Images */
+.project-image {
+    width: 100%;
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 8px;
+    transition: filter 2s ease;
+    filter: grayscale(100%);
+}
+
+/* Project Content */
+.project-content {
+    text-align: center; /* Center text inside items */
+}
+
+/* Project Titles */
+.project-content h2 {
+    display: inline-block; /* Prevents line breaking */
+    background-image: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: light;
+    font-size: 1.8rem; /* Increase font size for h2 */
+}
+
+/* Project Descriptions */
+.project-content p {
+    color: rgb(215, 213, 213);
+    transition: color 5s ease;
+    margin-top: 0;
+}
+
+/* View Button Container */
+.view-button-container {
+    display: none; /* Hidden by default */
+    margin-top: 10px; /* Space above button */
+}
+
+/* View Button Styles */
+.view-button {
+    padding: 10px 15px;
+    background-color: #ffa500; /* Button color */
+    color: #ffffff; /* Text color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.view-button:hover {
+    background-color: #ff8c00; /* Darker on hover */
+}
+
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+        gap: 30px; /* Increased gap for larger screens */
+    }
+
+    .project-item {
+        padding: 30px; /* More padding on larger screens */
+    }
+
+    .project-content h2 {
+        font-size: 2rem; /* Adjust title size */
+    }
+
+    .project-content p {
+        font-size: 1.2rem; /* Adjust description size */
+    }
+}
+
+.project-image.greyscale {
+    filter: grayscale(0%); /* Apply greyscale filter */
+}
