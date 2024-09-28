@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <link href="Contact_style.css" rel="stylesheet">
     <title>Schedule a Meeting</title>
 </head>
 <body>
-
+<div class="backdrop" >
 <div class="container mt-5">
     <form method="post" action="Contact-SQL.php" id="contact-form">
-        <h2 class=" heading mb-4">Looking for a new <span class="talent"> talent? </span><br>Schedule a <span class="meeting"> Meeting</span></h2>
+        <h2 class="heading mb-4">Looking for a new <span class="talent"> talent? </span><br>Schedule a <span class="meeting"> Meeting</span></h2>
         
         <div class="form-group">
             <label for="name">Name:</label>
@@ -24,7 +26,9 @@
 
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required pattern=" /^(?=.*[a-zA-Z])(?!^[0-9._%+-]+$)([a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/i;" title="Please Enter a valid email ID">
+            <input type="email" class="form-control" id="email" name="email" required>
+            <i class="fa fa-exclamation-circle" aria-hidden="true" id="emailError" ></i>
+            <small id="emailHint" style="display: none; color: red;">Enter a valid email ID, e.g., something@gmail.com</small>
         </div>
 
         <div class="form-group">
@@ -33,25 +37,63 @@
         </div>
 
         <div class="form-group">
-            <label for="time">Preferred Time:</label>
+            <label for="time">Preferred Time (IST):</label>
             <input type="time" class="form-control" id="time" name="time" required>
         </div>
 
         <div class="form-group">
             <label for="message">Message (optional):</label>
-            <textarea class="form-control" id="message" name="message" rows="4" ></textarea>
+            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+            <i class="fa fa-exclamation-circle" aria-hidden="true" id="messageError" ></i>
+            <small id="messageCount" style="color: grey;">0/100</small>
         </div>
 
-        <button type="submit"  class="btn btn-primary">Schedule Meeting</button>
+        <button type="submit" class="btn btn-primary">Schedule Meeting</button>
     </form>
-</div>
-
+</div></div></div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script>
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
+const messageInput = document.getElementById('message');
+const messageError = document.getElementById('messageError');
+const emailHint=document.getElementById('emailHint');
 
+// Email validation
+emailInput.addEventListener('input', function() {
+    const emailRegex = /^(?!\d)[a-zA-Z]+[a-zA-Z0-9._%+-]*@[a-zA-Z]+\.[a-zA-Z]{2,}$/;;
 
+    // Test the email against the regex
+    if (!emailRegex.test(emailInput.value)) { // Use emailInput.value to get the input value
+        emailError.style.display = 'inline'; // Show error icon
+        emailHint.style.display = 'inline';
+        
+    } else {
+        emailError.style.display = 'none'; // Hide error icon
+        emailHint.style.display = 'none';
+    }
+});
+
+// Message character limit validation
+messageInput.addEventListener('input', function() {
+    const messageValue = messageInput.value;
+ 
+  
+    const messageCount = document.getElementById('messageCount');
+    // Update the character count
+    messageCount.textContent = `${messageValue.length}/100`;
+    // Check if the message exceeds 200 characters
+
+    if (messageValue.length > 200) {
+        messageError.style.display = 'inline'; // Show error icon
+    } else {
+        messageError.style.display = 'none'; // Hide error icon
+    }
+});
+</script>
 
 </body>
 </html>

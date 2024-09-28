@@ -1,17 +1,18 @@
-body{
-    font-family: Poppins,Arial, Helvetica, sans-serif;
+body {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     color: white;
-    background-color:black ;
+    background-color: black;
     background-image: url(formbg.gif);
     background-repeat: no-repeat;
-    background-size:cover;
-    
+    background-size: cover;
 }
-.heading{
+
+.heading {
     font-weight: lighter;
-   text-align:center ;
+    text-align: center;
 }
-.talent{
+
+.talent {
     font-family: 'Dancing Script', 'Courier New', Courier, monospace;
     background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
     background-clip: text;
@@ -19,8 +20,8 @@ body{
     color: transparent;
     font-size: 5rem;
 }
-.meeting{
-    
+
+.meeting {
     font-weight: lighter;
     background-image: linear-gradient(45deg, #00f5d4, #889ffb, #2c609f);
     background-clip: text;
@@ -28,19 +29,39 @@ body{
     color: transparent;
     font-size: 3rem;
 }
-.container{
+
+.container {
     width: 80%;
-    height: 100vh;
-    border-radius: 3rem;
-    background-color: rgba(65, 63, 63, 0.2);
-    backdrop-filter: blur(10rem);
-    margin-bottom: 2rem;
-}
-button{
-    border: none!important;
-    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+    height: auto; /* Change to auto for better wrapping */
+    max-width: 600px; /* Limit max width for the container */
+    margin: 0 auto; /* Center the container */
 
 }
-button:hover{
+
+.backdrop {
+
+    background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+    backdrop-filter: blur(10px); /* Blur effect */
+      -webkit-backdrop-filter: blur(10px);
+    padding: 30px; /* Padding around the form */
+height: 100%;
+    width: 100%; /* Full width */
+
+}
+
+button {
+    border: none !important;
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+    transition: background-image 1s ease, transform 1s ease;
+   
+}
+
+button:hover {
     background-image: linear-gradient(45deg, #00f5d4, #889ffb, #2c609f);
+    transform: scale(1.05);
+}
+
+.fa-exclamation-circle {
+    display: none;
+    color: red;
 }
