@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost:3307";
+$servername = "localhost";
 $username = "root";
-$password = "shino";
+$password = "";
 $dbname = "portfolio_db";
 $port="3307";
 
@@ -43,7 +43,9 @@ $conn->close();
 use PHPMailer\PHPMailer\PHPMailer; //import kr raha hai
 use PHPMailer\PHPMailer\Exception; // along with exceptions
 
-require 'vendor/autoload.php'; // Autoload PHPMailer classes
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php'; // Autoload PHPMailer classes
+require 'PHPMailer-master/src/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];   // Get the email from the form
@@ -57,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host       = 'smtp.gmail.com';          // Specify main and backup SMTP servers
         $mail->SMTPAuth   = true;                       // Enable SMTP authentication
         $mail->Username   = 'shinothomas17@gmail.com';     // Your email address (Gmail)
-        $mail->Password   = 'rsdv oabi piby sngn';      // Your email password or App Password
+        $mail->Password   = 'rsdvoabipibysngn';      // Your App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption for secure tranmission of the mail
         $mail->Port       = 587;                        //Port 25: Used for sending emails but often blocked by ISPs to reduce spam.
         //Port 587: Recommended for email submission, supporting STARTTLS.
@@ -76,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; // Error message if sending fails
     }
-} else {
+}else {
     echo "Invalid request.";                             // Message for invalid request
 }
 ?>
