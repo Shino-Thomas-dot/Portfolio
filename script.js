@@ -42,6 +42,33 @@ setTimeout(() => {
     // Animate the white background upward
     content.style.display = 'block'; // Show the content
     document.body.classList.add('loaded'); // Allow scrolling
-}, 2000); // Adjust timing to match loader duration
+}, 1000); // Adjust timing to match loader duration
 });
 
+//for the progress bar
+
+
+
+
+document.addEventListener("scroll", () => {
+    const skillsSection = document.querySelector(".skills-section");
+    const progressBars = document.querySelectorAll(".progress-bar");
+    const sectionPosition = skillsSection.getBoundingClientRect();
+    
+    // Check if the skills section is in the viewport
+    if (sectionPosition.top < window.innerHeight && sectionPosition.bottom > 0) {
+        progressBars.forEach(bar => {
+            const skillLevel = bar.getAttribute("data-skill"); // Get the skill level
+            bar.style.width = skillLevel; // Animate the progress bar width
+
+            // Set a timeout to check if the width matches skill level after animation duration
+          
+        });
+    } else {
+        // Reset the progress bars when the section is out of view
+        progressBars.forEach(bar => {
+            bar.style.width = '0%'; // Reset width
+           
+        });
+    }
+});

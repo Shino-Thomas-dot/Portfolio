@@ -48,7 +48,12 @@ body {
     flex-direction: column; /* Stack text and image */
     align-items: center; /* Center content */
     cursor: pointer; /* Indicate clickable items */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+    transition: transform 1s ease;
+  
+}
+.project-item:hover{
+    transform: scale(1.03);
+
 }
 
 /* Project Images */
@@ -57,7 +62,7 @@ body {
     max-width: 100%; /* Make image responsive */
     height: auto; /* Keeps aspect ratio */
     border-radius: 8px;
-    transition: filter 2s ease;
+    transition: filter 1s ease;
     filter: grayscale(100%);
 }
 
@@ -69,7 +74,7 @@ body {
 /* Project Titles */
 .project-content h2 {
     display: inline-block; /* Prevents line breaking */
-    background-image: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff);
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;

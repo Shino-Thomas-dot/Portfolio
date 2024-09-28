@@ -354,7 +354,7 @@ a {
     transform: translateY(10%);
 
     color: rgb(88, 88, 88);
-    text-align:justify !important;
+    text-align:center;
     
     /* Left align text */
     transition: opacity .8s ease, transform .8s ease;
@@ -412,7 +412,7 @@ a {
         flex-direction: row;
         /* Side by side on larger screens */
         /* Space between image and text */
-        align-items: center;
+        align-items: justify;
         /* Align vertically */
         max-width: 100%;
     }
@@ -442,19 +442,13 @@ a {
     }
 }
 .learn-more-link{
-    background-image: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+  
     text-align: center;
     font-weight:light;
 }
 .learn-more-link:hover{
   
-    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: white;
 }
 @media (min-width: 768px) {
     .learn-more-link{
@@ -562,5 +556,157 @@ a {
     }
     .footer-button {
         font-size: 1rem; /* Adjust button size further */
+    }
+}
+
+/* CSS for Skills Section */
+.skills-section {
+    padding: 1rem;
+    text-align: left;
+    background-color: #000000; /* Optional: Add a dark background to the section */
+    color: #ffffff; /* Ensure text is readable against dark background */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Spacing between grid items */
+}
+
+.skill-category {
+    background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+    backdrop-filter: blur(10px); /* Blur effect for a frosted glass look */
+    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Inner spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.progress-bar {
+    margin-bottom: 20px;
+    height: 1.5rem; /* Height of the progress bar */
+    border-radius: 3rem; /* Rounded corners for the progress bar */
+    position: relative; /* For positioning child elements */
+    overflow: hidden; /* Prevents overflow of content */
+    transition: width 3s ease;
+    /* Smooth animation for width and color changes */
+    width: 0; /* Start width at 0 for animation */
+    background-color: #ddd; /* Default background color before the animation starts */
+
+}
+
+.progress-bar {
+    background: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff);
+
+}
+
+.progress-bar span {
+    position: absolute; /* Positioning inside the progress bar */
+    left: 10px; /* Left padding for the text */
+    color: rgb(255, 255, 255); /* Text color */
+    font-weight: bold; /* Bold text for better visibility */
+}
+
+.skills {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 300;
+    margin: 1.5rem;
+    font-size: 3rem;
+}
+
+.skill-category h3 {
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+/* Skill item layout */
+.skill-item {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px; /* Space between each skill */
+}
+
+.skill-logo img {
+    width: 40px; /* Set logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+/* Testimonials Section Styles */
+/* Testimonials Section Styles */
+.testimonials-section {
+    padding: 5vw 3vw;
+    
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.5rem;
+ 
+color: white;    
+margin-bottom: 2rem;
+}
+
+/* Carousel Container */
+.carousel-container {
+    overflow: hidden;
+    max-width: 100%; /* Ensure the carousel fits within the screen */
+    position: relative;
+}
+
+/* Carousel Items */
+.carousel {
+    display: flex;
+    animation: scrollTestimonials 10s linear infinite; /* Infinite scrolling */
+}
+
+.testimonial-item {
+    min-width: 25%; /* Show 4 items at a time */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Individual Testimonial Styles */
+.testimonial-text {
+    font-size: 1.2rem;
+    position: relative;
+    color: #ffffff;
+}
+
+.quote {
+    font-size: 5rem;
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.testimonial-author h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Keyframe for Carousel Scrolling */
+@keyframes scrollTestimonials {
+    0% { transform: translateX(0); }
+   
+    100% { transform: translateX(-100%); }
+}
+
+/* Media Query for Smaller Devices */
+@media (max-width: 768px) {
+    .testimonial-item {
+        min-width: 100%; /* Display 1 item at a time for smaller screens */
     }
 }

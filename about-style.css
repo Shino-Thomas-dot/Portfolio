@@ -42,7 +42,7 @@ h1 {
     max-width: 100%; /* Make image responsive */
     height: auto; /* Keeps aspect ratio */
     border-radius: 8px;
-    transition: filter 2s ease;
+    transition: filter 1s ease;
     filter: grayscale(100%);
 }
 
@@ -52,7 +52,7 @@ h1 {
 
 h2 {
     display: inline-block; /* Prevents line breaking */
-    background-image: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff);
+    background-image:linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -93,11 +93,10 @@ p.scrolled {
     position: relative; /* To position the animated container */
 }
 
-
 .volunteer-timeline {
     display: flex;
-    animation: slide-left 8s linear infinite; /* Adjusted duration for smoother animation */
-    gap: 4vw; 
+    animation: slide-left 20s linear infinite; /* Adjusted duration for smoother animation */
+    gap: 4vw;
 }
 
 /* Keyframes for the sliding animation */
@@ -105,17 +104,10 @@ p.scrolled {
     0% {
         transform: translateX(0); /* Start at original position */
     }
-    25% {
-        transform: translateX(-100%); /* Move left to show the first set of logos */
-    }
-    75% {
-        transform: translateX(-100%); /* Keep them off-screen */
-    }
     100% {
-        transform: translateX(-200%); /* Move left again to show the second set */
+        transform: translateX(-100%); /* End at 100% shift (this creates a continuous scroll) */
     }
 }
-
 
 /* Individual volunteer items */
 .volunteer-item {
@@ -127,8 +119,6 @@ p.scrolled {
     white-space: nowrap; /* Prevent text from wrapping */
     margin: 0 1vw; /* Adjust margin for spacing */
 }
-
-
 
 .volunteer-logo {
     width: 10vw; /* Increased logo size for all devices */
@@ -156,7 +146,7 @@ p.scrolled {
 @media (min-width: 768px) {
     .volunteer-timeline {
         gap: 3vw; /* Reduced gap for larger screens */
-        animation: slide-left 10s linear infinite; /* Slow down animation */
+        animation: slide-left 15s linear infinite; /* Slow down animation */
     }
 
     .volunteer-item {
@@ -181,12 +171,11 @@ p.scrolled {
 }
 
 .volunteer-section h2 {
-
-    background-image: linear-gradient(45deg, #97e5bd, #ffa500, #ffff00);
+    background-image:linear-gradient(45deg, #00f5d4, #889ffb, #2c609f);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 .volunteer-content p {

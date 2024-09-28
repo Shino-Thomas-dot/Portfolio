@@ -1,0 +1,42 @@
+/* Footer Styles */
+.site-footer {
+    background-color: #151515; /* Dark background to match your style */
+    padding: 3rem 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: lighter;
+    color: #ffffff; /* Matches your primary magazine theme color */
+}
+
+.footer-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: white!important;
+}
+
+.contact-link {
+    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
+    color: #131414;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+   
+    transition: background-color 0.8s, color 0.8s;
+}
+
+
+.contact-link:hover {
+    background-image: linear-gradient(45deg, #0031f5, #aff7ff, #8922ff); /* Slightly darker hover effect */
+    color: #fff;
+}
+
+

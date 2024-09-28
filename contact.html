@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="Contact_style.css" rel="stylesheet">
     <title>Schedule a Meeting</title>
 </head>
 <body>
 <div class="backdrop" >
 <div class="container mt-5">
-    <form method="post" action="Contact-SQL.php" id="contact-form">
+    <form method="POST" action="Contact-SQL.php" id="contact-form">
         <h2 class="heading mb-4">Looking for a new <span class="talent"> talent? </span><br>Schedule a <span class="meeting"> Meeting</span></h2>
         
         <div class="form-group">
@@ -47,7 +47,8 @@
             <i class="fa fa-exclamation-circle" aria-hidden="true" id="messageError" ></i>
             <small id="messageCount" style="color: grey;">0/100</small>
         </div>
-
+        <div class="g-recaptcha" data-sitekey="6LcAAlIqAAAAAJj0Vzz5-9ExmB6BJt0m8soj2QQq"></div>
+<br>
         <button type="submit" class="btn btn-primary">Schedule Meeting</button>
     </form>
 </div></div></div>
@@ -93,6 +94,9 @@ messageInput.addEventListener('input', function() {
         messageError.style.display = 'none'; // Hide error icon
     }
 });
+
+
+
 </script>
 
 </body>
