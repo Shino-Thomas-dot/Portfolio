@@ -640,6 +640,9 @@ a {
     
     text-align: center;
 }
+.skill-category{
+    border: 1px solid rgb(94, 94, 94);
+}
 
 .testimonials-section h2 {
     font-size: 2.5rem;
@@ -658,7 +661,7 @@ margin-bottom: 2rem;
 /* Carousel Items */
 .carousel {
     display: flex;
-    animation: scrollTestimonials 10s linear infinite; /* Infinite scrolling */
+  
 }
 
 .testimonial-item {
@@ -674,16 +677,7 @@ margin-bottom: 2rem;
     color: #ffffff;
 }
 
-.quote {
-    font-size: 5rem;
-    background-image: linear-gradient(45deg, #ff69b4, #ffa500, #ffff00);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+
 
 .testimonial-author {
     display: flex;
@@ -697,16 +691,12 @@ margin-bottom: 2rem;
     color: #ffffff;
 }
 
-/* Keyframe for Carousel Scrolling */
-@keyframes scrollTestimonials {
-    0% { transform: translateX(0); }
-   
-    100% { transform: translateX(-100%); }
-}
 
 /* Media Query for Smaller Devices */
 @media (max-width: 768px) {
     .testimonial-item {
-        min-width: 100%; /* Display 1 item at a time for smaller screens */
+        display: flex;
+        flex-direction: column;
+        min-width: 100%; 
     }
 }

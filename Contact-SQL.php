@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host       = 'smtp.gmail.com';          // Specify main and backup SMTP servers
         $mail->SMTPAuth   = true;                       // Enable SMTP authentication
         $mail->Username   = 'shinothomas17@gmail.com';     // Your email address (Gmail)
-        $mail->Password   = 'rsdvoabipibysngn';      // Your App Password
+        $mail->Password   = 'gdvewxdizevrqtgt';      // Your App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption for secure tranmission of the mail
         $mail->Port       = 587;                        //Port 25: Used for sending emails but often blocked by ISPs to reduce spam.
         //Port 587: Recommended for email submission, supporting STARTTLS.
